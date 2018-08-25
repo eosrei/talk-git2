@@ -1,4 +1,4 @@
-#Next Level git
+# Next Level git
 Follow along: http://eosrei.github.io/talk-git2
 
 Source: https://github.com/eosrei/talk-git2
@@ -6,10 +6,10 @@ Source: https://github.com/eosrei/talk-git2
 Press *spacebar* to continue.
 
 
-#About Us
+# About Us
 Brad Erickson (eosrei) & Mark Ferree (mrf)
 
-#git History
+# git History
 
 A distributed version-control system created in 2005 by Linus Torvalds for
 Linux kernel development when no existing options provided the required features.
@@ -18,9 +18,9 @@ When asked why he called the new software, "git", British slang meaning "a
 rotten person", he said. "I'm an egotistical bastard, so I name all my projects
 after myself. First Linux, now git."
 
-#Prerequisites
+# Prerequisites
 
-##Git Commands
+## Git Commands
 
 *Working knowledge of Git from the command line.* You must know
 the following commands and their usage:
@@ -32,7 +32,7 @@ the following commands and their usage:
 * push
 * pull
 
-##Glossary
+## Glossary
 
 * VCS - Version-Control System
 * commit
@@ -42,7 +42,7 @@ the following commands and their usage:
 
 ----------
 
-##Useful commands: Tagging commits
+## Useful commands: Tagging commits
 
 Like most VCSs, Git has the ability to tag specific points in history as being important.
 
@@ -62,7 +62,7 @@ Date:   Tue Jan 19 03:14:08 2038 0000
 
 Think of tags as “Commit Names”
 
-##Useful commands: Comparing differences
+## Useful commands: Comparing differences
 
 git diff shows the differences between commits, the stage, or your current working directory.
 
@@ -87,7 +87,7 @@ index d3d57ae..f1ef55c 100644
     pf, err := pidfile.New(cli.Pidfile)
 ```
 
-##Useful commands: Viewing changes in commit history
+## Useful commands: Viewing changes in commit history
 ```bash
 user@server $ git log -p
 ```
@@ -108,7 +108,7 @@ index e902fc1..76f5a99 100644
 +       --css=css/custom.css \
         index.md -o index.html
 ```
-## Useful commands: Shorter history
+##  Useful commands: Shorter history
 
 ```bash
 user@server $ git log --oneline
@@ -120,7 +120,7 @@ user@server $ git log --oneline
 413d635 Move revealjs download into Makefile
 31f2cb0 Updating index.md with current gdocs
 ```
-##Useful commands: Whatchanged
+## Useful commands: Whatchanged
 
 ```bash
 user@server $ git whatchanged
@@ -137,7 +137,7 @@ Date:   Thu Oct 22 15:34:34 2015 -0700
 :000000 100644 0000000... 5de960e... A  css/custom.css
 ```
 
-##Useful commands: Git Blame
+## Useful commands: Git Blame
 
 Shows who wrote (or at least last edited) each line.
 
@@ -162,7 +162,7 @@ f434037c (Nathan Haug         2011-10-30 21:05:57 -0700  8)  * See COPYRIGHT.txt
 5e58da00 (Nathaniel Catchpole 2014-06-26 11:47:01 +0100 15)
 ```
 
-##Useful commands: Git Stash
+## Useful commands: Git Stash
 
 Store your changes and remove them from the working directory. A stash can
 re-applied later as needed.
@@ -182,7 +182,7 @@ stash@{2}: WIP on master: 21d80a5 added number to log
 user@server ~/example $ git stash apply
 ```
 
-##Useful commands: Amend
+## Useful commands: Amend
 ```bash
 user@server ~/example $ git commit --amend
 ```
@@ -190,7 +190,7 @@ Replace the current commit. Often used for minor updates.
 
 Careful! Don't amend published commits, anything someone else may have pulled.
 
-##Useful commands: Force push
+## Useful commands: Force push
 ```bash
 user@server ~/example $ git push --force
 ```
@@ -200,7 +200,7 @@ Overwrites the remote branch history with your local branch history.
 Careful! You can delete your remote branch history with this command or
 even the entire repository.
 
-##Useful commands: Bisect
+## Useful commands: Bisect
 
 Bisect: Divide into two parts
 
@@ -223,13 +223,13 @@ user@server ~/example $ git checkout 5484
 
 Reference: http://webchick.net/node/99
 
-#User Story Time
+# User Story Time
 
 Using git IRL
 
 ----------
 
-##Incorrect git can work
+## Incorrect git can work
 
 Two users working on one branch.
 
@@ -237,7 +237,7 @@ Two users working on one branch.
 
 *Cross your fingers and hope.*
 
-##Failed to push some refs
+## Failed to push some refs
 
 The error we’ve all seen working like this.
 ```
@@ -250,11 +250,11 @@ Merge the remote changes (e.g. 'git pull') before pushing again. See the
 ```
 Git won't be able to push your changes if another user has pushed to the same branch as you.
 
-##What do you do?
+## What do you do?
 
 ![](images/graphs/incorrect-with-conflict1.png)
 
-##Common solution
+## Common solution
 
 ```bash
 user@server ~/example $ git pull # Equal to fetch and merge.
@@ -262,7 +262,7 @@ user@server ~/example $ git push
 ```
 ![](images/graphs/incorrect-with-conflict2.png)
 
-##Reasons to avoid
+## Reasons to avoid
 
 * Creates an extra git merge commit
 * Introduces greater risk of merge conflicts
@@ -270,7 +270,7 @@ user@server ~/example $ git push
 
 ----------
 
-##A Better Solution
+## A Better Solution
 
 All shared work goes into a development branch.
 
@@ -282,13 +282,13 @@ Master is preserved for hotfixes
 
 ----------
 
-##The Best Solution
+## The Best Solution
 
 Two users work in their own branches, the second branch is rebased, then merged to master when features are complete. *This is the Github/Bitbucket Pull Request workflow.*
 
 ![](images/graphs/correct-with-rebase.png)
 
-#Creating branches
+# Creating branches
 
 Git branches allow you to separate work on a project into discrete groups of commits.
 
@@ -308,7 +308,7 @@ user@server ~/example $ git branch #List local branches
 * 1-readme-details
 ```
 
-#Deleting branches
+# Deleting branches
 
 Branches can be used for new features, temporary tests or quick backups.
 ```bash
@@ -327,7 +327,7 @@ Deleted branch 1-readme-details (was 5849d9b).
 ```
 Delete local and remote branches when you are done with them.
 
-#Merging branches
+# Merging branches
 
 A merge creates a new commit to incorporate changes from other branches. The two branches commit histories are combined into a single history with each commit holding its place in time.
 ```
@@ -335,7 +335,7 @@ user@server ~/example $ git checkout master
 user@server ~/example $ git merge develop
 ```
 
-#Finding branches to clean up
+# Finding branches to clean up
 
 Git keeps track of what is merged and what isn't.
 ```bash
@@ -355,7 +355,7 @@ user@server ~/example $ git branch --no-merged
 
 ----------
 
-##Merge conflicts: Creating
+## Merge conflicts: Creating
 
 If you want them?
 
@@ -374,7 +374,7 @@ CONFLICT (content): Merge conflict in src/ProjectLauncher/LaunchForm.cs
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-##Merge conflicts: Resolving
+## Merge conflicts: Resolving
 
 ```bash
 user@server ~/example $ git status
@@ -406,7 +406,7 @@ user@server ~/example $ git add LaunchForm.cs
 
 ----------
 
-##Remotes and forks: Origin Remote
+## Remotes and forks: Origin Remote
 The source repository is called your *origin* remote.
 
 ```bash
@@ -424,19 +424,19 @@ Your branch is up-to-date with 'origin/master'.
 
 ![](images/graphs/remotes1.png)
 
-##Remotes and forks: Two users, one remote
+## Remotes and forks: Two users, one remote
 
 ![](images/graphs/remotes2.png)
 
 Two users can use the same repository as their origin remote.
 
-##Remotes and forks: Two users, two remotes.
+## Remotes and forks: Two users, two remotes.
 
 User2 forks the project repository creating their own fork.
 
 ![](images/graphs/remotes3.png)
 
-##Remotes and forks: Origin and Upstream
+## Remotes and forks: Origin and Upstream
 
 ![](images/graphs/remotes4.png)
 
@@ -446,7 +446,7 @@ The world according to user2
 * Pushes changes to *origin*
 * Merges to *upstream* or create a Pull Request.
 
-##Remotes and forks: Update your fork
+## Remotes and forks: Update your fork
 
 There are changes to the upstream master. How do you bring those changes into your fork’s master branch?
 
@@ -460,7 +460,7 @@ git push # aka git push origin master
 ```
 Now make your new feature branch or rebase your existing branches.
 
-#Pull requests
+# Pull requests
 
 A pull request is a request to pull your changes.
 
@@ -472,7 +472,7 @@ Create a pull request when you have new commits for a project in a fork and/or b
 
 ----------
 
-##Rebase
+## Rebase
 
 "REset your git branch BASE commit"
 
@@ -482,12 +482,12 @@ A rebase “replays” the commits from one branch onto another, creating a line
 
 The goal: Create a clean history without resolved merge conflicts or dozens of tiny commits.
 
-##Rebasing a feature branch - 1
+## Rebasing a feature branch - 1
 
 Remember this?
 ![](images/graphs/correct-with-rebase.png)
 
-##Rebasing a feature branch - 2
+## Rebasing a feature branch - 2
 
 Rebase to master, then merge to master.
 
@@ -499,7 +499,7 @@ git checkout master
 git merge master # Or create Pull Request
 ```
 
-##Squashing commits - 1
+## Squashing commits - 1
 
 You push early and often, but that results in a cluttered history.
 ```bash
@@ -514,7 +514,7 @@ bf7d984 Minor readme edit
 
 Rebase allows you to “squash” those extra commits together.
 
-##Squashing commits - 2
+## Squashing commits - 2
 
 ```bash
 user@server ~/example $ git rebase -i 286e2e4
@@ -540,7 +540,7 @@ pick bf7d984 Minor readme edit
 # Note that empty commits are commented out
 ```
 
-##Squashing commits - 3
+## Squashing commits - 3
 
 Change *pick* to *squash*
 ```
@@ -552,7 +552,7 @@ squash bf7d984 Minor readme edit
 ```
 Save and exit.
 
-##Squashing commits - 4
+## Squashing commits - 4
 
 git opens the text editor again allowing you amend the commit message of the now combined commits.
 
@@ -574,7 +574,7 @@ Minor edit
 #
 ```
 
-##Squashing commits - 5
+## Squashing commits - 5
 The result: a clean git history ready to merge or used in a pull request.
 ```bash
 user@server ~/example $ git log --oneline
@@ -596,7 +596,7 @@ d714f67 Readme details
 286e2e4 Initial
 ```
 
-##Editing commits with rebase - 1
+## Editing commits with rebase - 1
 
 Editing commits with rebase is functions like amending a commit, but allows you
 to work with the entire history.
@@ -621,7 +621,7 @@ pick d714f67 Readme details
 #  x, exec = run command (the rest of the line) using shell
 ```
 
-##Editing commits with rebase - 2
+## Editing commits with rebase - 2
 
 The result of a rebase to simply edit a commit message
 ```
@@ -646,16 +646,16 @@ user@server ~/example $ git log --oneline
 286e2e4 Initial
 ```
 
-#Useful commit messages
+# Useful commit messages
 
-##Not this
+## Not this
 
 ```bash
 git commit -m “css fix”
 ```
 It is not descriptive or useful.
 
-##Yes, this.
+## Yes, this.
 
 The git history explains how the project evolved and why decisions were made.
 Git commit messages, just like code comments, should succinctly explain “what”,
@@ -671,20 +671,20 @@ tracker reference if applicable) and so forth. Be concise but not too brief.
 
 Reference: https://wiki.gnome.org/Git/CommitMessages
 
-#Summary
+# Summary
 
 New git commands: tag, diff, log, whatchanged, blame, remote, stash, rebase, bisect
 
 Plus: Pull Requests, Useful commit messages
 
-#Further Study
+# Further Study
 
 * history rewriting for removing passwords and extraneous binary files.
 * repository hooks
 * Pull Requests are coming to Drupal.org: https://www.youtube.com/watch?v=37zyV2mqDjU
 * https://www.atlassian.com/git/tutorials/advanced-overview/
 
-#EOF
+# EOF
 
 **Brad Erickson**  - eosrei.net - github.com/eosrei
 
